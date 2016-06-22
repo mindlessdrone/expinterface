@@ -49,36 +49,8 @@
 			}
 		</style>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-		<script type="text/javascript">
-			function formatTime(secs) {
-				var minutes = Math.floor(secs / 60);
-				var seconds = secs % 60;
-				var secText = seconds < 10 ? "0" + seconds : seconds;
-
-				return minutes + ":" + secText;
-			}
-		
-
-			$(function() {
-				$('#noteArea').keyup(function (e) {
-					var text = $('#noteArea').val();
-					$.ajax({
-						url: 'typed',
-						method: 'POST',
-						data: text
-					});
-				});
-
-				$('#movie1').on('play', function() {
-					$('#tone')[0].play()
-				});
-				$('#movie1').on('timeupdate', function() {
-					var seconds = $('#movie1')[0].currentTime;
-					$('#timearea').text(formatTime(Math.floor(seconds)));
-				});
-			});
-		
-		</script>
+		<script src="scripts/util.js" type="text/javascript"></script>
+		<script src="scripts/index.js" type="text/javascript"></script>
 	</head>
 	<body>
 		<div id="top">
