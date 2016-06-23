@@ -10,6 +10,7 @@ $(function() {
 
 	$('#movie1').on('play', function() {
 		$('#tone')[0].play()
+		$('#movie2')[0].volume = 0;
 	});
 	$('#movie1').on('timeupdate', function() {
 		var seconds = $('#movie1')[0].currentTime;
